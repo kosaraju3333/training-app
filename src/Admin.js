@@ -1,8 +1,11 @@
 import "./Admin.css";
+import { Navigate } from "react-router-dom";
+
 
 import { useEffect, useState } from "react";
 
 function Admin() {
+
 
   const [requests, setRequests] = useState([]);
 
@@ -35,14 +38,30 @@ function Admin() {
 
   };
 
+  // Check if user is logged in
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    return <Navigate to="/login" />;
+  }
+
 
   return (
 
     <div className="admin-container">
 
-  <h1 className="admin-title">
-    Student Registration Requests
-  </h1>
+  	<h1 className="admin-title">
+    		Student Registration Requests
+  	</h1>
+
+	<button
+          className="logout-btn"
+          onClick={() => {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "/login";
+          }}
+       >
+        Logout
+      </button>
+
 
   <table className="request-table">
 
