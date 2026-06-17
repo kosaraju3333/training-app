@@ -3,8 +3,8 @@ import { useState } from "react";
 
 function Home() {
   const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
+    fullname: "",
+    username: "",
     password: "",
     email: "",
   });
@@ -63,16 +63,16 @@ function Home() {
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              name="firstname"
-              placeholder="First Name"
+              name="fullname"
+              placeholder="Full Name"
               onChange={handleChange}
               required
             />
 
 	    <input
               type="text"
-              name="lastname"
-              placeholder="Last Name"
+              name="username"
+              placeholder="Set Username"
               onChange={handleChange}
               required
             />

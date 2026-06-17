@@ -49,8 +49,8 @@ function Admin() {
     <thead>
       <tr>
         <th>ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Full Name</th>
+        <th>Username</th>
         <th>Email</th>
         <th>Status</th>
         <th>Action</th>
@@ -64,8 +64,8 @@ function Admin() {
         <tr key={request.id}>
 
           <td>{request.id}</td>
-          <td>{request.first_name}</td>
-          <td>{request.last_name}</td>
+          <td>{request.full_name}</td>
+          <td>{request.user_name}</td>
           <td>{request.email}</td>
 
           <td>
