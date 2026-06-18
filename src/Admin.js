@@ -38,6 +38,18 @@ function Admin() {
 
   };
 
+
+  const deleteUser = async (id) => {
+
+  await fetch(`/api/delete/${id}`, {
+    method: "PUT"
+  });
+
+  window.location.reload();
+
+ }; 
+
+
   // Check if user is logged in
   if (localStorage.getItem("isLoggedIn") !== "true") {
     return <Navigate to="/login" />;
@@ -114,6 +126,21 @@ function Admin() {
 	    <span> No Action</span>
 	   )}
           </td>
+
+	 <td>
+
+        {
+          request.status === "Approved" && (
+            <button
+              className="delete-btn"
+              onClick={() => deleteUser(request.id)}
+            >
+              Delete User
+            </button>
+          )
+        }
+
+         </td>
 
         </tr>
 
